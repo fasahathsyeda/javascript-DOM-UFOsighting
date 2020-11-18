@@ -2,6 +2,7 @@
 var tableData = data;
 
 // YOUR CODE HERE!
+// select the table body tag and add the data in html
 var tbody=d3.select("tbody");
 data.forEach((ufosighting) => {
     var row = tbody.append("tr");
@@ -10,7 +11,7 @@ data.forEach((ufosighting) => {
       cell.text(value);
     });
   });
-
+//select the button and form tags from html
 var button=d3.select("#filter-btn");
 var form=d3.select("#form");
 // Create event handlers 
@@ -30,7 +31,7 @@ function runEnter() {
     var inputValue = inputElement.property("value");
   
     console.log(inputValue);
-  
+    // filter the data to match the datetime
     var filteredData = tableData.filter(tableData => tableData.datetime === inputValue);
   
     console.log(filteredData);

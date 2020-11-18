@@ -61,22 +61,20 @@ function runDate() {
   // Select the input element and get the raw HTML node
   var date = d3.select("#datetime");
 
-  // Get the value property of the input element
+  // Get the value property of the input element date
   var dateValue = date.property("value");
 
   console.log(dateValue);
-
+  // filter the data to match the given date
   var filteredData = tableData.filter(tableData => tableData.datetime === dateValue);
   console.log(filteredData);
-
-
-
-
+  // select the input element country
   var country=d3.select("#country");
+  // Get the value property of the input element country
   var selectedcountry=country.property("value");
   console.log(selectedcountry);
 
-
+  // filter the the country 
   var filteredCountry=filteredData.filter(filteredData => filteredData.country === selectedcountry );
   console.log(filteredCountry);
 
@@ -90,19 +88,8 @@ function runDate() {
     state.text(uniqueState[i]);
   }
 
-  // tbody.html("");
-  // filteredData.forEach((signting) => {
-  // var row = tbody.append("tr");
-  // Object.entries(signting).forEach(([key, value]) => {
-  //   var cell = row.append("td");
-  //   cell.text(value);
-  //   });
-  // });
+  
  };
-
-
-
-
 
 // Complete the event handler function for the form
 function runEnter() {
@@ -119,12 +106,6 @@ function runEnter() {
 
   var country=d3.select("#country");
   var selectedcountry=country.property("value");
-
-
-
-
-
-
   var state=d3.select("#state");
   var selectedstate=state.property("value");
   console.log(selectedstate);
