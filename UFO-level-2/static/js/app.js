@@ -82,6 +82,7 @@ function runDate() {
   var uniqueState=[...new Set(dupStates)];
   console.log(uniqueState);
   var statehtml=d3.select("#state");
+  statehtml.html("");
   for (var i=0;i<uniqueState.length; i++){
       //var selstate=d3.select("#state");
     var state=statehtml.append("option");
